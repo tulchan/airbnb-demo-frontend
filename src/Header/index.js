@@ -1,7 +1,8 @@
 import React from "react";
 import logo from "./logo.svg";
-import { FluidContainer } from "../Containers";
-import { Wrapper, Header, HeaderLogo, Input, Nav, Link } from "./style";
+import { FluidContainer } from "../UI/Containers";
+import { Link } from "react-router-dom";
+import { Wrapper, Header, HeaderLogo, Input, Nav, NavLink } from "./style";
 
 export default function() {
   return (
@@ -10,15 +11,17 @@ export default function() {
         <Wrapper>
           <div className="col-xs-10 col-sm-7">
             <HeaderLogo>
-              <img src={logo} alt="logo" />
+              <Link to="/">
+                <img src={logo} alt="logo" />
+              </Link>
               <Input placeholder="Try &quot;Miami&quot;" />
             </HeaderLogo>
           </div>
           <Nav>
-            <Link href="">Become a host</Link>
-            <Link href="">Help</Link>
-            <Link href="">Sign Up</Link>
-            <Link href="">Log In</Link>
+            <NavLink href="">Become a host</NavLink>
+            <NavLink href="">Help</NavLink>
+            <NavLink href="">Sign Up</NavLink>
+            <NavLink href="">Log In</NavLink>
           </Nav>
         </Wrapper>
       </FluidContainer>
