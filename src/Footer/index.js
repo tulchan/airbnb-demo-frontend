@@ -17,7 +17,7 @@ import {
   Logo,
   SelectValue
 } from "./style";
-import { FluidContainer } from "../Containers";
+import { FluidContainer } from "../UI/Containers";
 
 export default function() {
   return (

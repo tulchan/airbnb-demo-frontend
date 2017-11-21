@@ -1,113 +1,59 @@
-import React from "react";
-import {
-  Img,
-  CardValue,
-  PriceDescr,
-  Star,
-  Review,
-  ReviewAbout,
-  Stars,
-  HouseInfo,
-  HouseType,
-  Card
-} from "../Cards";
-import { SlideButton } from "../SlideButton";
+import React, { Component } from "react";
+import styled from "styled-components";
+import { MainWrapper } from "../UI/Containers";
+import Filters from "./Filter";
+import Cards from "./Cards";
+import MyMap from "./Map";
+import Pagination from "./Pagination";
+import locationIcon from "./location.svg";
 
-import image1 from "./homescard1.png";
-import image2 from "./homescard2.png";
-import image3 from "./homescard3.png";
-import star from "../Experiences/star.png";
-
-export const Button = SlideButton.extend`
-  top: 83px;
-  @media only screen and (min-width: 1200px) {
-    top: 105px;
-  }
+const Hint = styled.div`
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 16px;
 `;
 
-export default function() {
-  return (
-    <section>
-      <Button />
-      <div className="row">
-        <div className="col-xs-4">
-          <Card>
-            <Img src={image1} alt="" />
-            <CardValue>
-              <PriceDescr>$82 La Salentina, see, nature & relax</PriceDescr>
-              <HouseInfo>
-                <HouseType>Entire house</HouseType>
-                <HouseType>9 beds</HouseType>
-              </HouseInfo>
-            </CardValue>
-            <div>
-              <Stars>
-                <Star src={star} />
-                <Star src={star} />
-                <Star src={star} />
-                <Star src={star} />
-                <Star src={star} />
-              </Stars>
-              <Review>
-                <ReviewAbout>97</ReviewAbout>
-                <ReviewAbout>Superhost</ReviewAbout>
-              </Review>
+const MapTrigger = styled.button`
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 24px;
+  right: 8px;
+  background-color: #fff;
+  background-image: url(${locationIcon});
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid rgba(72, 72, 72, 0.16);
+  border-radius: 50%;
+`;
+
+const MainWrap = MainWrapper.extend`
+  margin-top: 139px;
+`;
+
+class MainPage extends Component {
+  render() {
+    return (
+      <div>
+        <MainWrap>
+          <Filters />
+          <div className="container">
+            <div className="row">
+              <div className="col-xs-12 col-md-8">
+                <Cards />
+                <Pagination />
+                <Hint>
+                  Enter dates to see full pricing. Additional fees apply. Taxes
+                  may be added.
+                </Hint>
+              </div>
+              <MyMap center={[69.931121, 30.388457]} zoom={9} />
             </div>
-          </Card>
-        </div>
-        <div className="col-xs-4">
-          <Card>
-            <Img src={image2} alt="" />
-            <CardValue>
-              <PriceDescr>
-                $82 Your private 3 bedr, riad and exclusive
-              </PriceDescr>
-              <HouseInfo>
-                <HouseType>Entire house</HouseType>
-                <HouseType>5 beds</HouseType>
-              </HouseInfo>
-            </CardValue>
-            <div>
-              <Stars>
-                <Star src={star} />
-                <Star src={star} />
-                <Star src={star} />
-                <Star src={star} />
-                <Star src={star} />
-              </Stars>
-              <Review>
-                <ReviewAbout>161</ReviewAbout>
-                <ReviewAbout>Superhost</ReviewAbout>
-              </Review>
-            </div>
-          </Card>
-        </div>
-        <div className="col-xs-4">
-          <Card>
-            <Img src={image3} alt="" />
-            <CardValue>
-              <PriceDescr>$200 Dreamy Tropical Tree House</PriceDescr>
-              <HouseInfo>
-                <HouseType>Entire treehouse</HouseType>
-                <HouseType>1 bed</HouseType>
-              </HouseInfo>
-            </CardValue>
-            <div>
-              <Stars>
-                <Star src={star} />
-                <Star src={star} />
-                <Star src={star} />
-                <Star src={star} />
-                <Star src={star} />
-              </Stars>
-              <Review>
-                <ReviewAbout>364</ReviewAbout>
-                <ReviewAbout>Superhost</ReviewAbout>
-              </Review>
-            </div>
-          </Card>
-        </div>
+          </div>
+          <MapTrigger />
+        </MainWrap>
       </div>
-    </section>
-  );
+    );
+  }
 }
+export default MainPage;

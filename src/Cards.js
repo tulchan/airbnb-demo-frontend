@@ -18,8 +18,9 @@ export const Price = styled.span`
   margin-right: 5px;
 `;
 
-export const PriceDescr = styled.span`
+export const Description = styled.p`
   font-family: "CircularAir-Bold", sans-serif;
+  margin-top: 4px;
 `;
 
 export const Star = styled.img`

@@ -44,7 +44,7 @@ export const Nav = styled.nav`
   }
 `;
 
-export const Link = styled.a`
+export const NavLink = styled.a`
   margin-left: 25px;
   color: #383838;
   text-decoration: none;
