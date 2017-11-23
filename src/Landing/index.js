@@ -7,19 +7,21 @@ import Destinations from "./Destinations";
 import { MainWrapper } from "../UI/Containers";
 import Footer from "../Footer";
 
-const MainWrap = MainWrapper.extend``;
+const LandingWrapper = MainWrapper.extend`
+  margin-top: 80px;
+`;
 
 class MainPage extends Component {
   render() {
     return (
       <div>
-        <MainWrap>
+        <LandingWrapper>
           <Explore />
           <Experiences />
           <Homes />
           <Reservation />
           <Destinations />
-        </MainWrap>
+        </LandingWrapper>
         <Footer />
       </div>
     );

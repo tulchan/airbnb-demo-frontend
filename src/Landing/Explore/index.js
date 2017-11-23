@@ -35,7 +35,7 @@ export default function() {
           <Categories>
             <div className="row">
               <div className="col-xs-4">
-                <Link to="/homes">
+                <Link to="/Homes">
                   <Card img={image1} title="Homes" />
                 </Link>
               </div>

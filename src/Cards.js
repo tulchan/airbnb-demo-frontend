@@ -6,7 +6,9 @@ export const Img = styled.img`
 
 export const Card = styled.a.attrs({
   href: "#"
-})``;
+})`
+  display: block;
+`;
 
 export const CardValue = styled.div`
   line-height: 18px;

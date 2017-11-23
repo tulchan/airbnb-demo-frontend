@@ -2,11 +2,16 @@ import styled from "styled-components";
 import loupe from "./search.svg";
 
 export const Header = styled.header`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 80px;
+  background-color: #fff;
   border-bottom: 1px solid rgba(72, 72, 72, 0.2);
+  z-index: 3;
 `;
 
 export const HeaderLogo = styled.div`
