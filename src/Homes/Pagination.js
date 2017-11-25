@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Paginationarrow from "./pagetoright.svg";
+import Pagetoright from "./pagetoright.svg";
 
-const Pagination = styled.section`
+const Wrapper = styled.section`
   display: block;
   text-align: center;
   margin-top: 26px;
@@ -32,7 +32,7 @@ const FirstPage = Page.extend`
 
 const NextPage = Page.extend`
   background-color: #fff;
-  background-image: url(${Paginationarrow});
+  background-image: url(${Pagetoright});
   background-repeat: no-repeat;
   background-position: center;
   border: 1px solid #0f7276;
@@ -47,11 +47,19 @@ export const FullPrice = styled.div`
   font-size: 16px;
 `;
 export const Paragraph = styled.p`
-  margin-top: 20px;
+  font-family: "CircularAir-Book", sans-serif;
+  color: #636363;
+  margin-top: 35px;
+`;
+
+const Rentals = styled.span`
+  font-family: "CircularAir-Book", sans-serif;
+  font-size: 16px;
+  color: #383838;
 `;
 
 export default props => (
-  <Pagination>
+  <Wrapper>
     <PageWrapper>
       <FirstPage>1</FirstPage>
       <Page>2</Page>
@@ -61,11 +69,11 @@ export default props => (
       <NextPage />
     </PageWrapper>
     <FullPrice>
-      <span>1 – 18 of 300+ Rentals</span>
+      <Rentals>1 – 18 of 300+ Rentals</Rentals>
       <Paragraph>
         Enter dates to see full pricing. Additional fees apply. Taxes may be
         added.
       </Paragraph>
     </FullPrice>
-  </Pagination>
+  </Wrapper>
 );
