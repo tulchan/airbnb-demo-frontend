@@ -2,18 +2,27 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { MainWrapper } from "../UI/Containers";
 import Pagination from "./Pagination";
-import Maincards from "./maincards";
+import Card from "./Card";
 import GoogleMaps from "./Map";
 import Filters from "./Filters";
-
-const FullPrice = styled.div`
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 16px;
-`;
+import location from "./location.svg";
 
 const HomesWrapper = MainWrapper.extend`
   margin-top: 139px;
+`;
+
+const MapTrigger = styled.button`
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 24px;
+  right: 8px;
+  background-color: #fff;
+  background-image: url(${location});
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid rgba(72, 72, 72, 0.16);
+  border-radius: 50%;
 `;
 
 class MainPage extends Component {
@@ -25,12 +34,13 @@ class MainPage extends Component {
           <div className="container">
             <div className="row">
               <div className="col-xs-12 col-md-8">
-                <Maincards />
+                <Card />
                 <Pagination />
               </div>
               <GoogleMaps center={[69.931121, 30.388457]} zoom={9} />
             </div>
           </div>
+          <MapTrigger />
         </HomesWrapper>
       </div>
     );
