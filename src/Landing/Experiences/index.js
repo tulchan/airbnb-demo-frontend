@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./style";
+import Card from "./Card";
 import { SlideButton } from "../../SlideButton";
 import Caption from "../../UI/Caption";
 import { Container, ScrollContainer } from "../../UI/Containers";

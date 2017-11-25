@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Card from "./style";
+import Card from "./Card";
 import image1 from "./explore1.png";
 import image2 from "./explore2.png";
 import image3 from "./explore3.png";
 import { Link } from "react-router-dom";
-import { Wrapper, Img, CardValue, Paragraph, Categories } from "./style";
+import { Wrapper, Categories } from "./Card";
 import {
   ScrollContainer,
   Container,

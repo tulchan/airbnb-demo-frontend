@@ -2,7 +2,7 @@ import React from "react";
 import { SlideButton } from "../../SlideButton";
 import { ScrollContainer, Container } from "../../UI/Containers";
 import Caption from "../../UI/Caption";
-import Card from "./style";
+import Card from "./Card";
 import image1 from "./dest1.png";
 import image2 from "./dest2.png";
 import image3 from "./dest3.png";
