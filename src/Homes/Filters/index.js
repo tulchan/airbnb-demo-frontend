@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { FluidContainer } from "../../UI/Containers";
-import { Dropdown } from "./Dropdown";
+import { Dropdown } from "./Dates/Dropdown";
+import { Dates } from "./Dates/Dates";
 
 const Filter = styled.div`
   position: fixed;
@@ -20,17 +21,38 @@ const Wrapper = styled.div`
   display: flex;
 `;
 
+const defaultState = {
+  isDatesOpen: false
+};
+
 class Filters extends React.Component {
+  state = defaultState;
+
+  closeMenu = () => {
+    this.setState(defaultState);
+  };
+
+  openDates = () => {
+    this.setState({ isDatesOpen: true });
+  };
+
   render() {
     return (
       <Filter>
         <FluidContainer>
           <Wrapper>
-            <Dropdown name="Dates" />
-            <Dropdown name="Guests" />
-            <Dropdown name="Room type" />
-            <Dropdown name="Price" />
-            <Dropdown name="Instant Book" />
+            <Dropdown
+              name="Dates"
+              activeName="Check in — Check out "
+              onClick={this.openDates}
+              isActive={this.state.isDatesOpen}
+            >
+              <Dates closeMenu={this.closeMenu} />
+            </Dropdown>
+            <Dropdown name="Guests" hiddenXs />
+            <Dropdown name="Room type" hiddenXs />
+            <Dropdown name="Price" hiddenXs />
+            <Dropdown name="Instant Book" hiddenXs />
             <Dropdown name="More filters" />
           </Wrapper>
         </FluidContainer>

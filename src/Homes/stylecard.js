@@ -11,7 +11,8 @@ import {
   Stars,
   HouseInfo,
   HouseType,
-  Card
+  Card,
+  StarsWrapper
 } from "../Cards";
 
 const CardWrapper = Card.extend`
@@ -19,27 +20,30 @@ const CardWrapper = Card.extend`
   margin-bottom: 18px;
 `;
 
+const HouseInformation = HouseInfo.extend`
+  margin-bottom: 4px;
+`;
+
+const PriceDescription = Description.extend`
+  color: #383838;
+  font-size: 15px;
+`;
+
 export default props => (
   <CardWrapper>
     <Img src={props.img} alt="" />
     <CardValue>
-      <Description>
+      <PriceDescription>
         <Price>${props.price}</Price>
-        {props.descr}
-      </Description>
-      <HouseInfo>
-        <HouseType>{props.layout}</HouseType>
+        {props.description}
+      </PriceDescription>
+      <HouseInformation>
+        <HouseType>{props.typehouse}</HouseType>
         <HouseType>{props.beds}</HouseType>
-      </HouseInfo>
+      </HouseInformation>
     </CardValue>
     <div>
-      <Stars>
-        <Star src={star} />
-        <Star src={star} />
-        <Star src={star} />
-        <Star src={star} />
-        <Star src={star} />
-      </Stars>
+      <StarsWrapper count={props.count} />
       <Review>
         <ReviewAbout>97</ReviewAbout>
         <ReviewAbout>Superhost</ReviewAbout>

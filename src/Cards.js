@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import star from "./star.png";
+import React from "react";
 
 export const Img = styled.img`
   margin-bottom: 10px;
@@ -25,12 +27,14 @@ export const Description = styled.p`
   margin-top: 4px;
 `;
 
-export const Star = styled.img`
-  margin-right: 3px;
-  display: inline-block;
+export const Star = styled.img.attrs({
+  src: star
+})`
+  padding-right: 4px;
 `;
 
 export const Review = styled.span`
+  font-family: "CircularAir-Book", sans-serif;
   font-size: 12px;
   margin-left: 8px;
   vertical-align: middle;
@@ -64,6 +68,7 @@ export const HouseType = styled.span`
     display: inline-block;
     margin-left: 5px;
     margin-right: 5px;
+    margin-top: 5px;
   }
   &:first-child {
     &:before {
@@ -93,3 +98,13 @@ export const PricePerson = styled.p`
 export const City = styled.p`
   font-family: "CircularAir-Bold", sans-serif;
 `;
+
+export const StarsWrapper = props => (
+  <Stars>
+    <Star />
+    <Star />
+    <Star />
+    <Star />
+    <Star />
+  </Stars>
+);
