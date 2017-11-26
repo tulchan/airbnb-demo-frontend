@@ -1,6 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { DropDown } from "./DropDown";
+import {
+  DropGuests,
+  DropRooms,
+  DropPrice,
+  DropBook,
+  DropMore,
+  DropDown
+} from "./DropDown";
 import Dates from "./Dates";
 import Guests from "./Guests";
 import RoomType from "./RoomType";
@@ -39,24 +46,24 @@ export default function() {
     <Wrapper>
       <div className="container">
         <Filters>
-          <DropDown name="Dates">
+          <DropDown name="Dates" altName="Check in - Check out ">
             <Dates />
           </DropDown>
-          <DropDown name="Guests">
+          <DropDown name="Guests" altName="Guests">
             <Guests />
           </DropDown>
           <DesktopButtons>
-            <DropDown name="Room type">
+            <DropDown name="Room type" altName="Room type">
               <RoomType />
             </DropDown>
-            <DropDown name="Price">
+            <DropDown name="Price" altName="Price">
               <Price />
             </DropDown>
-            <DropDown name="Instant book">
+            <DropDown name="Instant book" altName="Instant book">
               <InstantBook />
             </DropDown>
           </DesktopButtons>
-          <DropDown name="More filters" />
+          <DropDown name="More filters" altName="More filters" />
         </Filters>
       </div>
     </Wrapper>

@@ -59,7 +59,7 @@ export class DropDown extends React.Component {
     return (
       <div>
         <Filter onClick={this.toggleOpen} isOpen={this.state.isOpen}>
-          {this.state.isOpen ? "Check in — Check out " : this.props.name}
+          {this.state.isOpen ? this.props.altName : this.props.name}
         </Filter>
 
         {this.state.isOpen && (
@@ -75,3 +75,4 @@ export class DropDown extends React.Component {
     );
   }
 }
+
