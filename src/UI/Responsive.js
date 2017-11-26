@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import Responsive from "react-responsive";
 
 export const Md = props => <Responsive {...props} minWidth={1124} />;
