@@ -1,63 +1,64 @@
 import React from "react";
 import styled from "styled-components";
-import { FluidContainer } from "../../UI/Containers";
-import { Dropdown } from "./Dates/Dropdown";
-import { Dates } from "./Dates/Dates";
+import { DropDown } from "./DropDown";
+import Dates from "./Dates";
+import Guests from "./Guests";
+import RoomType from "./RoomType";
+import Price from "./Price";
+import InstantBook from "./InstantBook";
 
-const Filter = styled.div`
+export const Filters = styled.div`
+  padding: 12px 0;
   position: fixed;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  top: 80px;
+  z-index: 10;
   width: 100%;
-  height: 53px;
-  border-bottom: 0.5px rgba(72, 72, 72, 0.3) solid;
-  background-color: #fff;
-  z-index: 3;
+  background-color: white;
+  top: 80px;
+  display: flex;
+`;
+
+export const DesktopButtons = styled.div`
+  display: inherit;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Wrapper = styled.div`
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  top: 80px;
   display: flex;
+  border-bottom: 1px solid rgba(72, 72, 72, 0.2);
+  height: 57px;
 `;
 
-const defaultState = {
-  isDatesOpen: false
-};
-
-class Filters extends React.Component {
-  state = defaultState;
-
-  closeMenu = () => {
-    this.setState(defaultState);
-  };
-
-  openDates = () => {
-    this.setState({ isDatesOpen: true });
-  };
-
-  render() {
-    return (
-      <Filter>
-        <FluidContainer>
-          <Wrapper>
-            <Dropdown
-              name="Dates"
-              activeName="Check in — Check out "
-              onClick={this.openDates}
-              isActive={this.state.isDatesOpen}
-            >
-              <Dates closeMenu={this.closeMenu} />
-            </Dropdown>
-            <Dropdown name="Guests" hiddenXs />
-            <Dropdown name="Room type" hiddenXs />
-            <Dropdown name="Price" hiddenXs />
-            <Dropdown name="Instant Book" hiddenXs />
-            <Dropdown name="More filters" />
-          </Wrapper>
-        </FluidContainer>
-      </Filter>
-    );
-  }
+export default function() {
+  return (
+    <Wrapper>
+      <div className="container">
+        <Filters>
+          <DropDown name="Dates">
+            <Dates />
+          </DropDown>
+          <DropDown name="Guests">
+            <Guests />
+          </DropDown>
+          <DesktopButtons>
+            <DropDown name="Room type">
+              <RoomType />
+            </DropDown>
+            <DropDown name="Price">
+              <Price />
+            </DropDown>
+            <DropDown name="Instant book">
+              <InstantBook />
+            </DropDown>
+          </DesktopButtons>
+          <DropDown name="More filters" />
+        </Filters>
+      </div>
+    </Wrapper>
+  );
 }
-export default Filters;
