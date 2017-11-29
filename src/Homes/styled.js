@@ -1,5 +1,4 @@
 import React from "react";
-import star from "./star.png";
 import {
   Img,
   CardValue,
@@ -13,7 +12,7 @@ import {
   HouseType,
   Card,
   StarsWrapper
-} from "../Cards";
+} from "../Card";
 
 const CardWrapper = Card.extend`
   margin-top: 20px;
@@ -38,7 +37,7 @@ export default props => (
         {props.description}
       </PriceDescription>
       <HouseInformation>
-        <HouseType>{props.typehouse}</HouseType>
+        <HouseType>{props.houseType}</HouseType>
         <HouseType>{props.beds}</HouseType>
       </HouseInformation>
     </CardValue>

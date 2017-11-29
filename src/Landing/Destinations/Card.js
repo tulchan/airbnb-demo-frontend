@@ -1,5 +1,5 @@
 import React from "react";
-import { Img, City, Card } from "../../Cards";
+import { Img, City, Card } from "../../Card";
 
 export default props => (
   <Card>

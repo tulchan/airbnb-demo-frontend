@@ -5,7 +5,7 @@ import {
   InstitutionName,
   PricePerson,
   Card
-} from "../../Cards";
+} from "../../Card";
 
 export default props => (
   <Card>

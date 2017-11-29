@@ -1,5 +1,5 @@
 import React from "react";
-import star from "../Experiences/star.png";
+import star from "../Experiences/star.svg";
 import {
   Img,
   CardValue,
@@ -12,7 +12,7 @@ import {
   HouseInfo,
   HouseType,
   Card
-} from "../../Cards";
+} from "../../Card";
 
 export default props => (
   <Card>
@@ -20,7 +20,7 @@ export default props => (
     <CardValue>
       <Description>
         <Price>${props.price}</Price>
-        {props.descr}
+        {props.description}
       </Description>
       <HouseInfo>
         <HouseType>{props.layout}</HouseType>

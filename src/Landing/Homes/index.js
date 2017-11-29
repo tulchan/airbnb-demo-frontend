@@ -26,7 +26,7 @@ export default function() {
               <Card
                 img={image1}
                 price={82}
-                descr="La Salentina, see, nature & relax"
+                description="La Salentina, see, nature & relax"
                 layout={"Entire house"}
                 beds={"9 beds"}
                 reviews={97}
@@ -37,7 +37,7 @@ export default function() {
               <Card
                 img={image2}
                 price={82}
-                descr="Your private 3 bedr"
+                description="Your private 3 bedr"
                 layout={"Entire house"}
                 beds={"5 beds"}
                 reviews={161}
@@ -48,7 +48,7 @@ export default function() {
               <Card
                 img={image3}
                 price={200}
-                descr="Dreamy Tropical Tree House"
+                description="Dreamy Tropical Tree House"
                 layout={"Entire treehouse"}
                 beds={"1 bed"}
                 reviews={364}

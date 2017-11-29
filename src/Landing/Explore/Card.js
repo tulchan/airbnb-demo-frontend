@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import { Card } from "../../Cards";
+import { Card } from "../../Card";
 
 export const Wrapper = styled.section`
   display: flex;

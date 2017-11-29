@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import star from "./star.png";
+import star from "./star.svg";
 import React from "react";
 
 export const Img = styled.img`
