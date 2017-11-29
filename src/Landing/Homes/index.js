@@ -27,10 +27,10 @@ export default function() {
                 img={image1}
                 price={82}
                 description="La Salentina, see, nature & relax"
-                layout={"Entire house"}
-                beds={"9 beds"}
+                layout="Entire house"
+                beds="9 beds"
                 reviews={97}
-                review={"Superhost"}
+                review="Superhost"
               />
             </div>
             <div className="col-xs-4">
@@ -38,10 +38,10 @@ export default function() {
                 img={image2}
                 price={82}
                 description="Your private 3 bedr"
-                layout={"Entire house"}
-                beds={"5 beds"}
+                layout="Entire house"
+                beds="5 beds"
                 reviews={161}
-                review={"Superhost"}
+                review="Superhost"
               />
             </div>
             <div className="col-xs-4">
@@ -49,10 +49,10 @@ export default function() {
                 img={image3}
                 price={200}
                 description="Dreamy Tropical Tree House"
-                layout={"Entire treehouse"}
-                beds={"1 bed"}
+                layout="Entire treehouse"
+                beds="1 bed"
                 reviews={364}
-                review={"Superhost"}
+                review="Superhost"
               />
             </div>
           </div>
