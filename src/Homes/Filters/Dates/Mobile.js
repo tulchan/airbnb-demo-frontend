@@ -1,16 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import cross from "./close.svg";
-import arrow from "./arrow-right.svg";
 import { DayPickerRangeController } from "react-dates";
+import close from "../../close.svg";
+import arrow from "../../arrow-right.svg";
 
-const Background = styled.div`
+const Filter = styled.div`
   position: fixed;
   left: 0px;
   top: 0px;
+  bottom: 0;
   width: 100%;
   height: 100%;
-  background-color: white;
+  background: white;
+  z-index: 4;
 `;
 
 const Header = styled.div`
@@ -21,42 +23,32 @@ const Header = styled.div`
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 16px;
+  font-family: "CircularAir-Book";
   line-height: normal;
   font-size: 14px;
   position: absolute;
   width: 100%;
-  z-index: 10;
-  background-color: white;
+  z-index: 6;
+  background: #fff;
 `;
 
 const CloseButton = styled.button`
   border: none;
-  background-image: url(${cross});
+  background: url(${close});
   background-repeat: no-repeat;
   background-position: center;
-  background-color: white;
   height: 26px;
   width: 26px;
   cursor: pointer;
 `;
 
-const Title = styled.span`
-  font-family: CircularAir, sans-serif;
-  line-height: normal;
-  font-size: 14px;
+const Title = styled.div`
   color: #383838;
 `;
 
-const Reset = styled.button`
-  font-family: CircularAir, sans-serif;
-  line-height: normal;
-  margin: 0px;
-  border: none;
-  background: white;
-  font-size: 14px;
+const Reset = styled.div`
   color: #0f7276;
   cursor: pointer;
-  padding: 0px 8px;
 `;
 
 const DatesRow = styled.div`
@@ -67,10 +59,10 @@ const DatesRow = styled.div`
   width: 100%;
   top: 40px;
   background: #fff;
-  z-index: 5;
+  z-index: 2;
 `;
 
-const Seleted = styled.div`
+const Label = styled.div`
   font-family: "CircularAir-Light";
   line-height: normal;
   font-size: 18px;
@@ -86,18 +78,27 @@ const Arrow = styled.img`
   margin-right: 8px;
 `;
 
-export default props => (
-  <Background>
-    <Header>
-      <CloseButton />
-      <Title>When</Title>
-      <Reset>Reset</Reset>
-    </Header>
-    <DatesRow>
-      <Seleted isActive>Check-in</Seleted>
-      <Arrow src={arrow} alt="arrow" />
-      <Seleted>Check-out</Seleted>
-    </DatesRow>
-    <DayPickerRangeController {...props} />
-  </Background>
-);
+export default class extends React.Component {
+  render() {
+    return (
+      <Filter>
+        <Header>
+          <CloseButton onClick={this.props.closeFilter} />
+          <Title>When</Title>
+          <Reset>Reset</Reset>
+        </Header>
+        <DatesRow>
+          <Label isActive>Check-in</Label>
+          <Arrow src={arrow} alt="arrow" />
+          <Label>Check-out</Label>
+        </DatesRow>
+        <DayPickerRangeController
+          hideKeyboardShortcutsPanel
+          initialVisibleMonth={null}
+          numberOfMonths={3}
+          orientation="verticalScrollable"
+        />
+      </Filter>
+    );
+  }
+}
